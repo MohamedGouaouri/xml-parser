@@ -71,9 +71,13 @@
 
     #include <stdio.h>
     extern int yylex();
-    void yyerror(char *s);    
+    void yyerror(char *s);
 
-#line 77 "xml.tab.c"
+    #define RESET   "\033[0m"
+    #define RED     "\033[31m"      /* Red */
+    #define GREEN   "\033[32m"      /* Green */ 
+
+#line 81 "xml.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -117,7 +121,7 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    ID = 258,                      /* ID  */
+    TEXT = 258,                    /* TEXT  */
     STRING = 259,                  /* STRING  */
     EQUAL = 260,                   /* "="  */
     OPENTAG = 261,                 /* "<"  */
@@ -147,7 +151,7 @@ enum yysymbol_kind_t
   YYSYMBOL_YYEOF = 0,                      /* "end of file"  */
   YYSYMBOL_YYerror = 1,                    /* error  */
   YYSYMBOL_YYUNDEF = 2,                    /* "invalid token"  */
-  YYSYMBOL_ID = 3,                         /* ID  */
+  YYSYMBOL_TEXT = 3,                       /* TEXT  */
   YYSYMBOL_STRING = 4,                     /* STRING  */
   YYSYMBOL_EQUAL = 5,                      /* "="  */
   YYSYMBOL_OPENTAG = 6,                    /* "<"  */
@@ -525,7 +529,7 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    19,    19,    20,    22,    23,    26,    27,    30
+       0,    23,    23,    24,    26,    27,    30,    31,    34
 };
 #endif
 
@@ -541,7 +545,7 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "\"end of file\"", "error", "\"invalid token\"", "ID", "STRING",
+  "\"end of file\"", "error", "\"invalid token\"", "TEXT", "STRING",
   "\"=\"", "\"<\"", "\">\"", "\"</\"", "$accept", "xml", "content",
   "params_eps", "pair", YY_NULLPTR
 };
@@ -1114,7 +1118,7 @@ yyreduce:
   switch (yyn)
     {
 
-#line 1118 "xml.tab.c"
+#line 1122 "xml.tab.c"
 
       default: break;
     }
@@ -1308,11 +1312,11 @@ yyreturn:
   return yyresult;
 }
 
-#line 31 "xml.y"
+#line 35 "xml.y"
 
 
 void yyerror(char *s){
-    printf("%s\n", s);
+    fprintf(stderr, "" RED "%s" RESET "\n", s);
 }
 
 int main(){

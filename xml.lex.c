@@ -366,8 +366,8 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[19] =
     {   0,
-        0,    0,   11,    9,    7,    7,    9,    8,    4,    3,
-        5,    1,    0,    2,    8,    6,    1,    0
+        1,    1,   11,    9,    7,    7,    9,    8,    1,    4,
+        3,    5,    0,    2,    8,    1,    6,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -378,14 +378,14 @@ static const YY_CHAR yy_ec[256] =
         1,    2,    1,    4,    5,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    6,    7,    7,    7,
         7,    7,    7,    7,    7,    7,    7,    1,    1,    8,
-        9,   10,    1,    1,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-        1,    1,    1,    1,    7,    1,   11,   11,   11,   11,
+        9,   10,    1,    1,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        1,    1,    1,    1,    7,    1,    7,    7,    7,    7,
 
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
-       11,   11,    1,    1,    1,    1,    1,    1,    1,    1,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
+        7,    7,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -402,40 +402,35 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[12] =
+static const YY_CHAR yy_meta[11] =
     {   0,
-        1,    1,    2,    1,    1,    1,    3,    1,    1,    1,
-        3
+        1,    1,    2,    1,    1,    1,    1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[22] =
+static const flex_int16_t yy_base[21] =
     {   0,
-        0,    0,   21,   22,   22,   22,   16,    0,   13,   22,
-       22,    0,   14,   12,    0,   22,    0,   22,   11,   14,
-       10
+        0,    0,   19,   20,   20,   20,   14,    0,   10,   10,
+       20,   20,   11,   10,    0,    6,   20,   20,   11,   10
     } ;
 
-static const flex_int16_t yy_def[22] =
+static const flex_int16_t yy_def[21] =
     {   0,
        18,    1,   18,   18,   18,   18,   19,   20,   18,   18,
-       18,   21,   19,   19,   20,   18,   21,    0,   18,   18,
-       18
+       18,   18,   19,   19,   20,   18,   18,    0,   18,   18
     } ;
 
-static const flex_int16_t yy_nxt[34] =
+static const flex_int16_t yy_nxt[31] =
     {   0,
-        4,    5,    6,    7,    8,    4,    4,    9,   10,   11,
-       12,   13,   17,   13,   15,   14,   15,   14,   16,   14,
-       18,    3,   18,   18,   18,   18,   18,   18,   18,   18,
-       18,   18,   18
+        4,    5,    6,    7,    8,    4,    9,   10,   11,   12,
+       15,   13,   16,   14,   14,   17,   16,   14,   18,    3,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
-static const flex_int16_t yy_chk[34] =
+static const flex_int16_t yy_chk[31] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,   19,   21,   19,   20,   14,   20,   13,    9,    7,
-        3,   18,   18,   18,   18,   18,   18,   18,   18,   18,
-       18,   18,   18
+       20,   19,   16,   14,   13,   10,    9,    7,    3,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -455,8 +450,8 @@ char *yytext;
 #line 1 "xml.l"
 #line 2 "xml.l"
     #include "xml.tab.h"
-#line 458 "xml.lex.c"
-#line 459 "xml.lex.c"
+#line 453 "xml.lex.c"
+#line 454 "xml.lex.c"
 
 #define INITIAL 0
 
@@ -675,7 +670,7 @@ YY_DECL
 	{
 #line 22 "xml.l"
 
-#line 678 "xml.lex.c"
+#line 673 "xml.lex.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -708,7 +703,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 22 );
+		while ( yy_base[yy_current_state] != 20 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -736,15 +731,15 @@ case 1:
 YY_RULE_SETUP
 #line 23 "xml.l"
 {
-    printf(" IDENTIFIER ", yytext, yyleng);
-    return ID;
+    printf("TEXT\n", yytext, yyleng);
+    return TEXT;
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 27 "xml.l"
 {
-    printf(" STRING ", yytext, yyleng);
+    printf("STRING\n", yytext, yyleng);
     return STRING;
 }
 	YY_BREAK
@@ -752,7 +747,7 @@ case 3:
 YY_RULE_SETUP
 #line 31 "xml.l"
 {
-    printf(" EQUAL ", yytext, yyleng);
+    printf("EQUAL\n", yytext, yyleng);
     return EQUAL;
 }
 	YY_BREAK
@@ -760,7 +755,7 @@ case 4:
 YY_RULE_SETUP
 #line 35 "xml.l"
 {
-    printf(" OPENTAG ", yytext, yyleng);
+    printf("OPENTAG\n", yytext, yyleng);
     return OPENTAG;
 }
 	YY_BREAK
@@ -768,7 +763,7 @@ case 5:
 YY_RULE_SETUP
 #line 39 "xml.l"
 {
-    printf(" CLOSETAG ", yytext, yyleng);
+    printf("CLOSETAG\n", yytext, yyleng);
     return CLOSETAG;
 }
 	YY_BREAK
@@ -776,7 +771,7 @@ case 6:
 YY_RULE_SETUP
 #line 43 "xml.l"
 {
-    printf(" OPENCLOSINGTAG ", yytext, yyleng);
+    printf("OPENCLOSINGTAG\n", yytext, yyleng);
     return OPENCLOSINGTAG;
 }
 	YY_BREAK
@@ -796,7 +791,7 @@ YY_RULE_SETUP
 #line 52 "xml.l"
 {
 
-    printf("\nUnrecognized character %s\n", yytext);
+    yyerror("Unexpected character");
     yyterminate();
 }
 	YY_BREAK
@@ -805,7 +800,7 @@ YY_RULE_SETUP
 #line 57 "xml.l"
 ECHO;
 	YY_BREAK
-#line 808 "xml.lex.c"
+#line 803 "xml.lex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

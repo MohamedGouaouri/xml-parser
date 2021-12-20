@@ -1,11 +1,15 @@
 %{
     #include <stdio.h>
     extern int yylex();
-    void yyerror(char *s);    
+    void yyerror(char *s);
+
+    #define RESET   "\033[0m"
+    #define RED     "\033[31m"      /* Red */
+    #define GREEN   "\033[32m"      /* Green */ 
 %}
 
 // tokens
-%token ID 
+%token TEXT 
 %token STRING
 %token EQUAL "="
 
@@ -13,13 +17,13 @@
 %token CLOSETAG ">"
 %token OPENCLOSINGTAG "</"
 
-%left ID
+%left TEXT
 %%
 
 xml: 
-    | "<" ID params_eps ">" content "</" ID ">"
+    | "<" TEXT params_eps ">" content "</" TEXT ">"
 
-content: content ID content
+content: content TEXT content
         | xml
         ;
 
@@ -27,11 +31,11 @@ params_eps: //eps
         | pair params_eps
         ;
 
-pair: ID "=" STRING
+pair: TEXT "=" STRING
 %%
 
 void yyerror(char *s){
-    printf("%s\n", s);
+    fprintf(stderr, "" RED "%s" RESET "\n", s);
 }
 
 int main(){

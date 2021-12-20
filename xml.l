@@ -7,7 +7,7 @@
 
 ANYTHING .*
 
-ID [a-zA-Z][a-zA-Z0-9_]*
+TEXT [a-zA-Z0-9_]*
 
 STRING (\"{ANYTHING}\")
 
@@ -20,28 +20,28 @@ INLINECOMMENT #{ANYTHING}
 
 
 %%
-{ID} {
-    printf(" IDENTIFIER ", yytext, yyleng);
-    return ID;
+{TEXT} {
+    printf("TEXT\n", yytext, yyleng);
+    return TEXT;
 }
 {STRING} {
-    printf(" STRING ", yytext, yyleng);
+    printf("STRING\n", yytext, yyleng);
     return STRING;
 }
 {EQUAL} {
-    printf(" EQUAL ", yytext, yyleng);
+    printf("EQUAL\n", yytext, yyleng);
     return EQUAL;
 }
 {OPENTAG} {
-    printf(" OPENTAG ", yytext, yyleng);
+    printf("OPENTAG\n", yytext, yyleng);
     return OPENTAG;
 }
 {CLOSETAG} {
-    printf(" CLOSETAG ", yytext, yyleng);
+    printf("CLOSETAG\n", yytext, yyleng);
     return CLOSETAG;
 }
 {OPENCLOSINGTAG} {
-    printf(" OPENCLOSINGTAG ", yytext, yyleng);
+    printf("OPENCLOSINGTAG\n", yytext, yyleng);
     return OPENCLOSINGTAG;
 }
 
@@ -51,7 +51,7 @@ INLINECOMMENT #{ANYTHING}
 
 . {
 
-    printf("\nUnrecognized character %s\n", yytext);
+    yyerror("Unexpected character");
     yyterminate();
 }
 %%

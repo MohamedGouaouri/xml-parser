@@ -1,8 +1,8 @@
 
 
 xml: xml.l xml.y
-	flex xml.l
 	bison -d xml.y
+	flex xml.l
 	gcc xml.lex.c xml.tab.c -o xml
 
 clean: xml.lex.c xml.tab.c xml

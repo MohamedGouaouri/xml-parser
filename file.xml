@@ -1,8 +1,7 @@
 <element name="mohamed">
-        hello
+        hello ___
     <hello>
         hello
     </hello>
-        hello
-    <hello>
+        hello</hello>
 </element>
